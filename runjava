@@ -1,0 +1,32 @@
+#!/bin/bash
+
+####################################################################################################
+#  This is an executeable to run Java Programs in isolated env using docker container              #
+#  Paste this file in /usr/local/bin/DESIRED-NAME it will be a new command                         #
+#  Run this new command with syntax DESIRED-NAME NAME-OF-JAVA-FILE-NO-EXTENSION                    # 
+#  Example: /usr/local/bin/runjava MySet                                                           #
+# ##################################################################################################
+
+
+####################################################################################################
+#                                       Script                                                     #    
+####################################################################################################
+
+
+file=$1
+docker run -it --rm -v $(pwd):/app -w /app openjdk:21 javac ${file}.java && java -cp . ${file}Main
+rm -r *class 2> /dev/null
+
+
+####################################################################################################
+#                                      Explanation                                                 #
+#                                                                                                  #
+#  It takes file name as input and spawn a docker container in which ~                             #
+#  - Mounts the current working directory to /app directory in container                           #
+#  - After mounting the directory which also contains programs it moves into it                    #
+#  - After moving into it it compiles and executes the ${file}.java taken input earlier            #
+#  - After the work gets done exit                                                                 #
+#                                                                                                  #
+####################################################################################################
+
+
