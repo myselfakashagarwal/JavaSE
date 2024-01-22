@@ -71,6 +71,7 @@ public class MyCircularQueue<T> {
     public void clear() {
         front = null;
         rear = null;
+        size = 0;
     }
     
     public void display() {

@@ -47,6 +47,7 @@ public class MyStack<T> {
 
     public void clear() {
         top = null;
+        size = 0;
     }
 
     public boolean isEmpty() {
