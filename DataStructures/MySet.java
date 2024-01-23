@@ -45,7 +45,7 @@ public class MySet<T> {
     public boolean contains(T data) {
         MySet.Node temp = head;
         while (temp != null) {
-            if (temp.data == data) {
+            if (temp.data.equals(data)) {
                 return true; 
             }
             temp = temp.next;
