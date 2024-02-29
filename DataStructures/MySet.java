@@ -60,9 +60,10 @@ public class MySet<T> {
         } else {
             MySet.Node temp = head;
             while(temp != null) {
-                System.out.println(temp.data + " ");
+                System.out.print(temp.data + " ");
                 temp = temp.next;
             }
+            System.out.println(" ");
         }
     }
     
